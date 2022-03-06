@@ -10,10 +10,6 @@ public class UserService {
 
     private UserRepository userRepository = new UserRepositoryImpl();
 
-    public UserService(UserRepositoryImpl userRepository) {
-    }
-
-
     public User getById(Integer integer) {
         return userRepository.getById(integer);
     }
@@ -34,7 +30,4 @@ public class UserService {
         userRepository.delete(id);
     }
 
-    public User getByUsername(String name) {
-        return userRepository.getByUsername(name);
-    }
 }

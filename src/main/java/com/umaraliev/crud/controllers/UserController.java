@@ -5,7 +5,6 @@ import com.umaraliev.crud.model.File;
 import com.umaraliev.crud.model.User;
 import com.umaraliev.crud.repository.impl.UserRepositoryImpl;
 import com.umaraliev.crud.service.UserService;
-import org.jetbrains.annotations.NotNull;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -25,7 +24,7 @@ public class UserController extends HttpServlet {
 
     @Override
     public void init() {
-        userService = new UserService(new UserRepositoryImpl());
+        userService = new UserService();
     }
 
     @Override
@@ -35,15 +34,11 @@ public class UserController extends HttpServlet {
         User user = new User();
 
         user.setName(request.getParameter("name"));
-        user.setLogin(request.getParameter("login"));
-        user.setPassword(Integer.valueOf(request.getParameter("password")));
 
         userService.save(user);
 
         PrintWriter out = response.getWriter();
-        out.print("name: " + user.getName()
-                + " login: " + user.getLogin()
-                + " password:" + user.getPassword());
+        out.print("Save user");
         out.flush();
         response.sendRedirect("/user");
 

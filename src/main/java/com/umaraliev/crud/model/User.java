@@ -12,12 +12,6 @@ public class User {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "login")
-    private String login;
-
-    @Column(name = "password")
-    private Integer password;
-
 
     public Integer getId() {
         return id;
@@ -35,29 +29,12 @@ public class User {
         this.name = name;
     }
 
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public Integer getPassword() {
-        return password;
-    }
-
-    public void setPassword(Integer password) {
-        this.password = password;
-    }
 
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", login='" + login + '\'' +
-                ", password=" + password +
                 '}';
     }
 }

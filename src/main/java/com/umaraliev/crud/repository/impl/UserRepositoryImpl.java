@@ -54,7 +54,6 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public User save(User user) {
 
-
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
 
             transaction = session.beginTransaction();

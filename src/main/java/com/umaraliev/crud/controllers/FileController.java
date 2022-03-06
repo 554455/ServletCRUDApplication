@@ -34,7 +34,7 @@ public class FileController extends HttpServlet {
         fileService.save(file);
 
         PrintWriter out = response.getWriter();
-        out.print("name: " + file.getName());
+        out.print("Save file");
         out.flush();
         response.sendRedirect("/file");
 
